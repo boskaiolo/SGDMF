@@ -41,9 +41,4 @@ class DatasetImporter:
 
         for line in lines:
             chunk = line.split("\t")
-            yield int(chunk[0]), int(chunk[1]), float(chunk[2])
-
-
-
-di = DatasetImporter()
-print(di.dataset[0])
+            yield int(chunk[0])-1, int(chunk[1])-1, float(chunk[2])

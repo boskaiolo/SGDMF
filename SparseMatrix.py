@@ -47,6 +47,10 @@ class SparseMatrix:
     def getCol(self, col):
         return self.csc.get(col, {})
 
+    def getVal(self, row, col):
+        # This method might raise KeyError exception
+        return self.csr[row][col]
+
     def shape(self):
         return max(self.csr.keys())+1, max(self.csc.keys())+1
 
